@@ -1,0 +1,44 @@
+#name {
+  background-color: black;
+  color: lightgreen;
+  align-content: center;
+  margin: auto;
+  text-align: center;
+  width: 60%;
+  border-style: solid;
+  border-color: darkgreen;
+}
+
+#resume_content {
+  width: 60%;
+  text-align: center;
+  margin: auto;
+}
+
+
+#professional_photo {
+  height: 250px;
+  width: 180px;
+  margin-top: 18px;
+}
+
+#work_entries {
+  background-color: lightgreen;
+  color: black;
+  text-align: left;
+  border-style: solid;
+  border-color: darkgreen;
+}
+
+#goals {
+  display: inline;
+  width: 33%;
+  float: left;
+}
+
+#experience {
+  display: inline;
+  width: 66%;
+  float: right;
+  align-content: center;
+}
