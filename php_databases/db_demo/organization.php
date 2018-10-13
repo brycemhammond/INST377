@@ -140,7 +140,9 @@ class Organization implements JsonSerializable {
 
   // TODO #1: Implement a function to save an new organization
   // return number of rows inserted
-
+  public function saveOrganization(mysqli $conn) {
+    $conn->query("INSERT VALUES ()")
+  }
   // TODO #2: Implement a function to delete an organization.
   // return number of rows deleted
 

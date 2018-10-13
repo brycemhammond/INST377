@@ -206,27 +206,35 @@ var organizations = [
 	    <th style="border: 1px solid black">ORGANIZATION ANALYSIS</th>
 	  </tr>
 	  <tr>
-	    <td id="nonprofits" style="border: 1px solid black"><center>There are __ non-profits listed.</center></td>
+	    <td id="nonprofits" style="border: 1px solid black"></td>
 	  </tr>
 	  <tr>
-	    <td id="foundingYear" style="border: 1px solid black"><center>There are __ organizations less than 10 years old.</center></td>
+	    <td id="foundingYear" style="border: 1px solid black"></td>
 	  </tr>
 		<tr>
-			<td id="region" style="border: 1px solid black"><center>__ organizations are North American based companies.</center></td>
+			<td id="region" style="border: 1px solid black"></td>
 		</tr>
 		<tr>
-			<td id="typeOfData" style="border: 1px solid black"><center>There are __ organizations that utilized Transportation type of data.</center></td>
+			<td id="typeOfData" style="border: 1px solid black"></td>
 		</tr>
 		<tr>
-			<td id="sector" style="border: 1px solid black"><center>__ organizations reported no data use.</center></td>
+			<td id="sector" style="border: 1px solid black"></td>
 		</tr>
 	</table>
 <script>
 // outputs the first item of the organizations array. Just for testing.
-<<<<<<< HEAD
 console.log(organizations[0]);
+
+// console.log(organizations[0]);
+console.log("test");
+
+// Your JavaScript code goes here
 var regionCounter=0;
 var sectorCounter=0;
+var dataCounter=0;
+var nonprofitCounter=0;
+var ageCounter = 0;
+
 for(var x=0; x<organizations.length; x++) {
 	if(organizations[x].Region==="North America") {
 		regionCounter++;
@@ -234,20 +242,23 @@ for(var x=0; x<organizations.length; x++) {
 	if(organizations[x].Sectors==="Transportation and logistics") {
 		sectorCounter++;
 	}
+	if(organizations[x]["Type of Data Used"]==="Transportation" || organizations[x]["Type of Data Used"]==="Transportation, Geospatial, Business") {
+		dataCounter++;
+	}
+	if(organizations[x]["Organization Type"]==="Nonprofit") {
+		nonprofitCounter++;
+	}
+	if((2018 - organizations[x]["Founding Year"]) < 10) {
+		ageCounter++;
+	}
 }
-	document.getElementById("nonprofits").innerHTML = "The are " + organizations[0].Region + " of non profits listed";
-	document.getElementById("foundingYear").innerHTML = "There are " + organizations[0].Region + " that are less than 10 years old.";
-	document.getElementById("region").innerHTML = "There are " + regionCounter + " North American based companies.";
-	document.getElementById("typeOfData").innerHTML = "There are " + organizations[0].Region + " organizations that utilized Transportation type of data.";
-	document.getElementById("sector").innerHTML = "There are " + sectorCounter + " organizations that exist in the Transportation and logistics sector.";
+console.log(ageCounter);
 
-=======
-// console.log(organizations[0]); 
-console.log("test");
->>>>>>> e5b047a9bb3503de1d7eace8d4e187d53555f866
-
-// Your JavaScript code goes here
-
+	document.getElementById("nonprofits").innerHTML = "Question 1: " + "The are " + nonprofitCounter + " of nonprofit organizations listed.";
+	document.getElementById("foundingYear").innerHTML = "Question 2: " + "There are " + ageCounter + " organizations that are less than 10 years old.";
+	document.getElementById("region").innerHTML = "Question 3: " + "There are " + regionCounter + " North American based companies.";
+	document.getElementById("typeOfData").innerHTML =  "Question 4: " + "There are " + dataCounter + " organizations that utilized Transportation type of data.";
+	document.getElementById("sector").innerHTML =  "Question 5: " + "There are " + sectorCounter + " organizations that exist in the Transportation and logistics sector.";
 
 </script>
 
